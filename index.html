@@ -1,5 +1,8 @@
 <head>
     <style>
+        *
+        {
+        }
         body {
             background: #2f2f2f;
         }
@@ -15,6 +18,10 @@
             margin-right: auto;
             margin-top: auto;
             margin-bottom: auto;
+        }
+
+        .content:nth-child(1n){
+            margin-top: 10px;
         }
 
         .ncov-icon {
@@ -40,6 +47,7 @@
             color: rgba(16, 16, 16, 0.3);
             background-color: rgba(239, 239, 239, 0.3);
             border-color: rgba(118, 118, 118, 0.3);
+            cursor: default; 
         }
 
         button:hover:not([disabled=""]) {
@@ -60,6 +68,8 @@
             text-decoration: underline;
         }
     </style>
+
+    <title>COVID-19 STATUS ONLINE</title>
 </head>
 
 <body>
@@ -67,15 +77,31 @@
         <div class="ncov-icon"></div>
         <h2>Статистика по COVID-19 <u><span style="color: red">ONLINE</span></u></h2>
         <p>Для начало нажмите на кнопку "Обновить статус"</p>
+        <p>Безработные</p>
         <button>Обновить статус</button>
         <a target="_blank" href="https://ru.wikipedia.org/wiki/SARS-CoV-2">Что такое COVID-19?</a>
     </div>
 
     <div class="content">
-        <h2>COVID-19 было зарегистриована декабря месяца 2019 года в городке под названию Ухань </h2>
+        <h2>Если есть подозрение на Корону то чихайте на людей! Это помогает</h2>
+        <img style="position: relative; margin: auto;" src="https://static.tildacdn.com/tild3264-6364-4165-a662-373333636566/oval300.svg"/>
+    </div>
+
+    <div class="content">
+        <h2>COVID-19 был зарегистрирован 2019 года в городке под названию Ухань</h2>
+    </div>
+
+    <div class="content">
+        <h2>ГОРЯЧАЯ ЛИНИЯ МИНИСТЕРСТВА ЗДРАВООХРАНЕНИЯ РК -
+            (1406), 8 7172 768 043</h2>
     </div>
 
     <script>
+
+        function getID(id){
+            return document.getElementById(id);
+        }
+
         var stat = document.getElementsByTagName("p")[0];
         var but = document.getElementsByTagName("button")[0];
         var _tid = 0;
