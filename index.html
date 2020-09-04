@@ -1,8 +1,7 @@
 <head>
     <style>
-        *
-        {
-        }
+        * {}
+
         body {
             background: #2f2f2f;
         }
@@ -20,7 +19,7 @@
             margin-bottom: auto;
         }
 
-        .content:nth-child(1n){
+        .content:nth-child(1n) {
             margin-top: 10px;
         }
 
@@ -47,7 +46,7 @@
             color: rgba(16, 16, 16, 0.3);
             background-color: rgba(239, 239, 239, 0.3);
             border-color: rgba(118, 118, 118, 0.3);
-            cursor: default; 
+            cursor: default;
         }
 
         button:hover:not([disabled=""]) {
@@ -79,12 +78,13 @@
         <p>Для начало нажмите на кнопку "Обновить статус"</p>
         <p>Безработные</p>
         <button>Обновить статус</button>
-        <a target="_blank" href="https://ru.wikipedia.org/wiki/SARS-CoV-2">Что такое COVID-19?</a>
+        <a style="float: right; margin-bottom: 0;" target="_blank" href="https://ru.wikipedia.org/wiki/SARS-CoV-2">Что такое COVID-19?</a>
     </div>
 
     <div class="content">
         <h2>Если есть подозрение на Корону то чихайте на людей! Это помогает</h2>
-        <img style="position: relative; margin: auto;" src="https://static.tildacdn.com/tild3264-6364-4165-a662-373333636566/oval300.svg"/>
+        <img style="position: relative; margin: auto;"
+            src="https://static.tildacdn.com/tild3264-6364-4165-a662-373333636566/oval300.svg" />
     </div>
 
     <div class="content">
@@ -98,7 +98,7 @@
 
     <script>
 
-        function getID(id){
+        function getID(id) {
             return document.getElementById(id);
         }
 
@@ -119,9 +119,6 @@
                     }
                 }).then(async (e) => {
                     const data = await e.json();
-
-
-
                     stat.innerText = "Зараженные:" + data.injected + "\nКонтактированные:" + data.contacted;
                 }).catch((e) => {
                     stat.innerText = "Service unavailable";
