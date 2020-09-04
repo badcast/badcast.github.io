@@ -1,0 +1,110 @@
+<head>
+    <style>
+        body {
+            background: #2f2f2f;
+        }
+
+        .content {
+            display: block;
+            background: #3d3d3d;
+            color: white;
+            padding: 20px;
+            width: 700px;
+
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+        .ncov-icon {
+            background: url("ncov.png");
+            background-size: contain;
+            position: relative;
+            float: right;
+            width: 100px;
+            height: 100px;
+        }
+
+        button {
+            appearance: unset;
+            background: rgb(57, 57, 255);
+            color: white;
+            padding: 10px;
+            border: rgb(36, 36, 185) 2px solid;
+            outline: none;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            color: rgba(16, 16, 16, 0.3);
+            background-color: rgba(239, 239, 239, 0.3);
+            border-color: rgba(118, 118, 118, 0.3);
+        }
+
+        button:hover:not([disabled=""]) {
+            background: rgb(36, 36, 185);
+            border-color: rgb(57, 57, 255);
+            transition: linear;
+            transition-duration: 1ms;
+        }
+
+        a {
+            text-decoration: none;
+            background-color: rgb(46, 46, 46);
+            padding: 5px;
+            color: salmon;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="ncov-icon"></div>
+        <h2>Статистика по COVID-19 <u><span style="color: red">ONLINE</span></u></h2>
+        <p>Для начало нажмите на кнопку "Обновить статус"</p>
+        <button>Обновить статус</button>
+        <a target="_blank" href="https://ru.wikipedia.org/wiki/SARS-CoV-2">Что такое COVID-19?</a>
+    </div>
+
+    <div class="content">
+        <h2>COVID-19 было зарегистриована декабря месяца 2019 года в городке под названию Ухань </h2>
+    </div>
+
+    <script>
+        var stat = document.getElementsByTagName("p")[0];
+        var but = document.getElementsByTagName("button")[0];
+        var _tid = 0;
+
+        function refresh_status() {
+            stat.innerText = 'Запрос подан ' + new Date(Date.now()).toLocaleDateString() + '.\nОжидается обработка';
+            but.disabled = true;
+            if (_tid != 0)
+                clearTimeout(_tid);
+            _tid = setTimeout(() => {
+                fetch("https://m.egov.kz/covid-proxy-app/api/v1/covid/stat/all", {
+                    method: "GET",
+                    headers: {
+                        "Accept": "application/json",
+                    }
+                }).then(async (e) => {
+                    const data = await e.json();
+
+
+
+                    stat.innerText = "Зараженные:" + data.injected + "\nКонтактированные:" + data.contacted;
+                }).catch((e) => {
+                    stat.innerText = "Service unavailable";
+                });
+                _tid = 0;
+                but.disabled = false;
+            }, 1000);
+        }
+
+        but.onclick = function (e) { refresh_status(); };
+    </script>
+</body>
