@@ -1,8 +1,9 @@
-<head>
+
+<!-- saved from url=(0026)https://badcast.github.io/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <style>
-        *
-        {
-        }
+        * {}
+
         body {
             background: #2f2f2f;
         }
@@ -20,7 +21,7 @@
             margin-bottom: auto;
         }
 
-        .content:nth-child(1n){
+        .content:nth-child(1n) {
             margin-top: 10px;
         }
 
@@ -47,7 +48,7 @@
             color: rgba(16, 16, 16, 0.3);
             background-color: rgba(239, 239, 239, 0.3);
             border-color: rgba(118, 118, 118, 0.3);
-            cursor: default; 
+            cursor: default;
         }
 
         button:hover:not([disabled=""]) {
@@ -75,11 +76,23 @@
 <body>
     <div class="content">
         <div class="ncov-icon"></div>
-        <h2>Статистика по погоде <u><span style="color: red">ONLINE</span></u></h2>
-        <p>Для начало нажмите на кнопку "Обновить статус"</p>
+        <h2>Статистика по COVID-19 <u><span style="color: red">ONLINE</span></u></h2>
+        <p>Зараженные:106361<br>Контактированные:0</p>
+        <p>Безработные</p>
         <button>Обновить статус</button>
-        <a href="https://youtube.com/watch?v=w403218376" target="_blank">Test link</a>
+        <a style="float: right; margin-bottom: 0;" target="_blank" href="https://ru.wikipedia.org/wiki/SARS-CoV-2">Что такое COVID-19?</a>
     </div>
+
+
+    <div class="content">
+        <h2>Если есть подозрение на Корону то чихайте на людей! Это помогает</h2>
+        <img style="position: relative; margin: auto;" src="./COVID-19 STATUS ONLINE_files/oval300.svg">
+    </div>
+
+    <div class="content">
+        <h2>COVID-19 был зарегистрирован 2019 года в городке под названию Ухань</h2>
+    </div>
+
     <div class="content">
         <h2>ГОРЯЧАЯ ЛИНИЯ МИНИСТЕРСТВА ЗДРАВООХРАНЕНИЯ РК -
             (1406), 8 7172 768 043</h2>
@@ -87,7 +100,7 @@
 
     <script>
 
-        function getID(id){
+        function getID(id) {
             return document.getElementById(id);
         }
 
@@ -98,7 +111,6 @@
         function refresh_status() {
             stat.innerText = 'Запрос подан ' + new Date(Date.now()).toLocaleDateString() + '.\nОжидается обработка';
             but.disabled = true;
-            //url get from the source: https://www.ktk.kz/getimage/newsimgru/21500 << number is ID
             if (_tid != 0)
                 clearTimeout(_tid);
             _tid = setTimeout(() => {
@@ -111,7 +123,7 @@
                     const data = await e.json();
                     stat.innerText = "Зараженные:" + data.injected + "\nКонтактированные:" + data.contacted;
                 }).catch((e) => {
-                    stat.innerText = "Интернет не позволяет установить соединение";
+                    stat.innerText = "Service unavailable";
                 });
                 _tid = 0;
                 but.disabled = false;
@@ -120,4 +132,4 @@
 
         but.onclick = function (e) { refresh_status(); };
     </script>
-</body>
+</body></html>
