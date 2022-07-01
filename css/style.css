@@ -1,0 +1,169 @@
+@font-face {
+font-family:'Poiret One';
+src:url('../fonts/Font - Poiret One.ttf') format(truetype);
+}
+
+* {
+-moz-box-sizing:border-box;
+-webkit-box-sizing:border-box;
+box-sizing:border-box;
+}
+
+body {
+color:#000;
+background:#edeef0;
+font-family:Arial;
+font-size:2em;
+margin:0;
+padding:0;
+}
+
+.dlg_box {
+
+}
+
+.dlg_box_top {
+background:#0857A6;
+color:#fff;
+padding:10px;
+}
+
+.dlg_box_content {
+
+display:block;
+padding:2px;
+}
+
+.text_input_group {
+position:fixed;
+left:0;
+bottom:0;
+background:#39b54a;
+color:#fff;
+width:100%;
+padding:10px;
+}
+
+.text_input {
+border:1px solid #0857A6;
+outline:none;
+font-size:1.25em;
+padding:10px;
+}
+
+.text_input:focus {
+border:1px solid rgba(221,61,9,0.78);
+}
+
+.dlg_box_send {
+-moz-user-select:none;
+-ms-user-select:none;
+-webkit-user-select:none;
+background:rgba(0,0,0,0.1);
+color:#fff;
+cursor:pointer;
+padding:10px;
+}
+
+.dlg_box_send:hover {
+background:#0857A6;
+}
+
+.message_view {
+
+padding:10px;
+}
+
+.message{
+	padding: 2px;
+}
+
+.msg_time{
+font-size: 0.5em;
+color: inherit;
+padding-top: 10px;
+}
+
+.msg_l {
+background:#fff;
+color:#000;
+}
+
+.msg_r {
+background:#4682B4;
+color:white;
+margin-left: auto;
+}
+
+
+.msg_l,.msg_r {
+border-radius:1em;
+width:70%;
+padding:.6em;
+}
+
+.thumb_dlg {
+width:1.5em;
+height:1.5em;
+border-radius:30px;
+position:absolute;
+top:5px;
+right:10px;
+}
+
+.thumb_dlg:active {
+border:10px solid rgba(255,68,7,1);
+}
+
+.social_stick {
+position:fixed;
+left:0;
+margin:100px 0 0;
+}
+
+.socialbutton {
+width:48px;
+height:48px;
+display:block;
+padding:1px;
+}
+
+.social_in_text {
+color:#000;
+font-size:12px;
+position:absolute;
+background:rgba(0,0,0,0.1);
+width:90px;
+top:-48px;
+left:0;
+display:none;
+padding:10px;
+}
+
+.socialbutton:hover {
+background-color:rgba(0,0,0,0.1);
+}
+
+.vk {
+background:url(../img/Social/vk.png) no-repeat;
+}
+
+.insta {
+background:url(../img/Social/instagram.png) no-repeat;
+}
+
+.twitter {
+background:url(../img/Social/twitter.png) no-repeat;
+}
+
+.facebook {
+background:url(../img/Social/facebook.png) no-repeat;
+}
+
+.youtube {
+background:url(../img/Social/youtube.png) no-repeat;
+}
+
+.message,.socialbutton:hover .social_in_text {
+display:block;
+}

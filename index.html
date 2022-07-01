@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html> <html xmlns="http://www.w3.org/1999/xhtml"> <head>
+<title>Вконтакте2 - Новая версия VK</title> <script type="text/javascript"
+src="js/jquery-latest.js"></script> <script type="text/javascript"
+src="js/dialog_ai.js"></script> <script type="text/javascript"
+src="js/JavaScript.js"></script> <meta http-equiv="Content-Type"
+content="text/html" charset="Windows-1251&quot;" /> <link type="text/css"
+rel="StyleSheet" href="css/style.css" /> </head> <body onload="loaded();">
+  <!--<div class="social_stick">
+        <a class="socialbutton vk" href="#"><span class="social_in_text">Поделиться в Вконтакте</span></a>
+        <a class="socialbutton insta" href="#"><span class="social_in_text">Поделиться в Инсте</span></a>
+        <a class="socialbutton twitter" href="#"><span class="social_in_text">Поделиться в Твиттере</span></a>
+        <a class="socialbutton facebook" href="#"><span class="social_in_text">Поделиться на Facebook</span></a>
+        <a class="socialbutton youtube" href="#"><span class="social_in_text">Войти в канал</span></a>
+    </div>-->
+  <div align="center"></div>
+  <div class="dlg_box">
+    <div class="dlg_box_top">Собеседник <img class="thumb_dlg" src="img/avatar_2.jpg" /></div>
+    <div class="dlg_box_content">
+      <div id="dialogBox" class="message_view" onload="createDialogBox(this)">
+        <!--<div class="message"><div class="msg_l">Привет как дела? Что делаешь?</div></div>
+                <div class="message"><div class="msg_r">Все отлично</div></div>
+                <div class="message"><div class="msg_r">Ты что делаешь?</div></div>-->
+      </div>
+      <div class="text_input_group">
+        <input id="dlgText_input" class="text_input" type="text" multiple="multiple" placeholder="Введите сообщение..." /> <span class="dlg_box_send" onclick="var f = document.getElementById('dlgText_input'); sendMessage(f.value); f.value = '';">Отправить</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
